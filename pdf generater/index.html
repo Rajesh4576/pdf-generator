@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- <script src="https://raw.githack.com/eKoopmans/html2pdf/master/dist/html2pdf.bundle.js"></script>
+    <script src="script.js"></script> -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.5.3/jspdf.debug.js"></script>
+</head>
+<body>
+    <div id="invoice">
+        <h1>My Name is ...</h1>
+        <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium impedit voluptate ex? Voluptates dolores blanditiis, in quod sed enim, natus expedita cum harum hic nulla ratione provident vel nemo sint.</p>
+    </div>
+     <!-- <button onclick="generatePDF()">Download</button> -->
+
+</body>
+
+<script>
+    var doc = new jsPDF()
+    var div=document.querySelector('#invoice')
+    doc.fromHTML(div,15,15)
+    doc.save("output.pdf")
+</script>
+</html>
